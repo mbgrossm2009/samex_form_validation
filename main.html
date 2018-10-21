@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+         <meta charset="UTF-8">
+         <link rel = "stylesheet" href = "https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+         <link rel = "stylesheet" href = "stylesheet.css">
+        <title>
+            Main
+        </title>
+    </head>
+    <body>
+        <div class="alert" id="msg"></div>
+            <div class="container">
+                <form id="rForm">
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" class="form-control" id="first_name" aria-describedby="first_name" placeholder="First Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" class="form-control" id="last_name" aria-describedby="last_name" placeholder="Last Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="integer" class="form-control" id="age" placeholder="Age">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" aria-describedby="password" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <label for="confirm_Password">Confirm Password</label>
+                        <input type="Password" class="form-control" id="confirm_password" aria-describedby="confirm_password" placeholder="Confirm Password">
+                    </div>
+                        <button type="submit" class="btn btn-primary" id='submit'>Submit</button>
+
+                </form>
+            </div>
+            <br>
+
+            <script src="main_functions.js"> </script>
+            <script>
+             
+        function checkAll(e){
+            {e.preventDefault();
+                let first_name = document.getElementById('first_name').value
+                let last_name = document.getElementById('last_name').value
+                let email = document.getElementById('email').value
+                let age = document.getElementById('age').value
+                let password = document.getElementById('password').value
+                let confirm_password = document.getElementById('confirm_password').value
+                let msg = document.getElementById('msg');
+            
+                /*
+                () if (isUnderFifteen(age)){
+                    msg.className="alert alert-danger"
+                    msg.innerHTML="You are under 15 and can not register"
+                } else if(isOverOrEqualsFifteen(age)){
+                    msg.className="alert alert-success"
+                    msg.innerHTML="You are fully registered!"
+                } 
+                if (verifyPassword(password,confirm_password)){
+                    msg.className="alert alert-success"
+                    msg.innerHTML="You are fully registered!"
+                }else { 
+                    msg.className="alert alert-danger"
+                    msg.innerHTML="Passwords do not match"
+                } 
+                */
+
+
+
+
+
+                // restructed code of above
+                if (isOverOrEqualsFifteen(age) && verifyPassword(password,confirm_password)){
+                    msg.className="alert alert-success"
+                    msg.innerHTML="You are fully registered!"
+                } else if (isUnderFifteen(age)){
+                    msg.className="alert alert-danger"
+                    msg.innerHTML="You have to be 15 years old to register"
+                } else if (!verifyPassword(password,confirm_password)) {
+                    msg.className="alert alert-danger"
+                    msg.innerHTML="Passwords do not match"
+                }
+    
+            }
+        }
+
+        document.getElementById("rForm").addEventListener('submit',checkAll,false);
+        </script>
+    </body>
+</html>
