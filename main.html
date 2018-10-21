@@ -42,56 +42,56 @@
             </div>
             <br>
 
-            <script src="main_functions.js"> </script>
-            <script>
+        <script src="main_functions.js"> </script>
+        <script>
              
-        function checkAll(e){
-            {e.preventDefault();
-                let first_name = document.getElementById('first_name').value
-                let last_name = document.getElementById('last_name').value
-                let email = document.getElementById('email').value
-                let age = document.getElementById('age').value
-                let password = document.getElementById('password').value
-                let confirm_password = document.getElementById('confirm_password').value
-                let msg = document.getElementById('msg');
-            
-                /*
-                () if (isUnderFifteen(age)){
-                    msg.className="alert alert-danger"
-                    msg.innerHTML="You are under 15 and can not register"
-                } else if(isOverOrEqualsFifteen(age)){
-                    msg.className="alert alert-success"
-                    msg.innerHTML="You are fully registered!"
-                } 
-                if (verifyPassword(password,confirm_password)){
-                    msg.className="alert alert-success"
-                    msg.innerHTML="You are fully registered!"
-                }else { 
-                    msg.className="alert alert-danger"
-                    msg.innerHTML="Passwords do not match"
-                } 
-                */
+            function checkAll(e){
+                {e.preventDefault();
+                    let first_name = document.getElementById('first_name').value
+                    let last_name = document.getElementById('last_name').value
+                    let email = document.getElementById('email').value
+                    let age = document.getElementById('age').value
+                    let password = document.getElementById('password').value
+                    let confirm_password = document.getElementById('confirm_password').value
+                    let msg = document.getElementById('msg');
+                
+                    /*
+                    () if (isUnderFifteen(age)){
+                        msg.className="alert alert-danger"
+                        msg.innerHTML="You are under 15 and can not register"
+                    } else if(isOverOrEqualsFifteen(age)){
+                        msg.className="alert alert-success"
+                        msg.innerHTML="You are fully registered!"
+                    } 
+                    if (verifyPassword(password,confirm_password)){
+                        msg.className="alert alert-success"
+                        msg.innerHTML="You are fully registered!"
+                    }else { 
+                        msg.className="alert alert-danger"
+                        msg.innerHTML="Passwords do not match"
+                    } 
+                    */
 
 
 
 
 
-                // restructed code of above
-                if (isOverOrEqualsFifteen(age) && verifyPassword(password,confirm_password)){
-                    msg.className="alert alert-success"
-                    msg.innerHTML="You are fully registered!"
-                } else if (isUnderFifteen(age)){
-                    msg.className="alert alert-danger"
-                    msg.innerHTML="You have to be 15 years old to register"
-                } else if (!verifyPassword(password,confirm_password)) {
-                    msg.className="alert alert-danger"
-                    msg.innerHTML="Passwords do not match"
+                    // restructed code of above
+                    if (isOverOrEqualsFifteen(age) && verifyPassword(password,confirm_password)){
+                        msg.className="alert alert-success"
+                        msg.innerHTML="You are fully registered!"
+                    } else if (isUnderFifteen(age)){
+                        msg.className="alert alert-danger"
+                        msg.innerHTML="You have to be 15 years old to register"
+                    } else if (!verifyPassword(password,confirm_password)) {
+                        msg.className="alert alert-danger"
+                        msg.innerHTML="Passwords do not match"
+                    }
+        
                 }
-    
             }
-        }
 
-        document.getElementById("rForm").addEventListener('submit',checkAll,false);
+            document.getElementById("rForm").addEventListener('submit',checkAll,false);
         </script>
     </body>
 </html>
